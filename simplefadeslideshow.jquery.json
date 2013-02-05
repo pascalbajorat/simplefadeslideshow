@@ -1,0 +1,39 @@
+{
+    "name": "simplefadeslideshow",
+    "title": "Simple Fade SlideShow",
+    "description": "Simple Fade SlideShow is a very simple and easy to use fade-image slideshow. Its structure is very flexible and you can use it for image and / or content transition.",
+    "keywords": [
+        "slideshow",
+        "animation",
+        "effect",
+        "fade",
+        "slider",
+        "transition",
+        "options"
+    ],
+    "version": "2.1.0",
+    "author": {
+        "name": "Pascal Bajorat",
+        "url": "https://www.pascal-bajorat.com"
+    },
+    "maintainers": [
+        {
+            "name": "Pascal Bajorat",
+            "email": "pascal@pascal-bajorat.com",
+            "url": "https://www.pascal-bajorat.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "GPL",
+            "url": "http://www.gnu.org/licenses/gpl.txt"
+        }
+    ],
+    "bugs": "https://github.com/pascalbajorat/simplefadeslideshow/issues",
+    "homepage": "http://www.simplefadeslideshow.com/",
+    "docs": "http://www.simplefadeslideshow.com/documentation/",
+    "download": "http://www.simplefadeslideshow.com/download/",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
