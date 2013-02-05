@@ -17,5 +17,6 @@ Dual licensed under the MIT and Gnu GPL version 3 licenses.
 ## [Main Demo](http://www.simplefadeslideshow.com/)
 
 * [Documentation](http://www.simplefadeslideshow.com/documentation/)
-* [Latest demos!](http://www.simplefadeslideshow.com/).
-* [Download](https://github.com/pascalbajorat/simplefadeslideshow/zipball/master).
+* [Latest demos](http://www.simplefadeslideshow.com/)
+* [Download](https://github.com/pascalbajorat/simplefadeslideshow/zipball/master)
+* [Author](https://www.pascal-bajorat.com/)
