@@ -9,7 +9,10 @@
         "fade",
         "slider",
         "transition",
-        "options"
+        "options",
+        "ui",
+        "jquery",
+        "image"
     ],
     "version": "2.1.0",
     "author": {
