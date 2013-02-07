@@ -1,7 +1,7 @@
 {
     "name": "simplefadeslideshow",
     "title": "Simple Fade SlideShow",
-    "description": "Simple Fade SlideShow is a very simple and easy to use fade-image slideshow. Its structure is very flexible and you can use it for image and / or content transition.",
+    "description": "Simple Fade SlideShow is a very simple and easy to use fade-image slideshow. Its structure is very flexible and you can use it for image and / or content transition. Simple Fade SlideShow is highly customizable with CSS and it can either create the list and buttons automatically or you can create your own individual elements and Simple Fade SlideShow will only bind the relevant functions.",
     "keywords": [
         "slideshow",
         "animation",
