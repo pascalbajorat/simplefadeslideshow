@@ -1,6 +1,6 @@
 /*
  * fadeSlideShow
- * v.2.1.0
+ * v.2.2.0
  *
  * Copyright (c) 2010 Pascal Bajorat (http://www.pascal-bajorat.com)
  * Dual licensed under the MIT (below)
@@ -211,7 +211,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 				}else if(e.which==32){
 					if(intval){stopAutoplay();}
 					else{autoplay();}
-					return false;
+					//return false;
 				}
 			});
 		}
