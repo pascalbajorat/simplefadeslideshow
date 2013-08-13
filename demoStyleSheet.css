@@ -9,7 +9,7 @@ body{font:14px Tahoma, Geneva, sans-serif;}
 
 ul#slideshow{list-style:none;border:1px solid #999;padding:2px;margin:auto;margin-top:5%;width:640px;height:480px;overflow:hidden;}
 p{text-align:center;}
-#fssList{list-style:none;width:646px;margin:auto;padding:5px 0 0 45%;}
+#fssList{list-style:none;width:646px;margin:auto;padding:5px 0 0 45%;position: absolute;top: 435px;}
 #fssList li{display:inline;padding-right:10px;}
 #fssList li a{color:#999;text-decoration:none;}
 #fssList li.fssActive a{font-weight:bold;color:#333;}
