@@ -28,6 +28,7 @@ jQuery.fn.fadeSlideShow = function(options) {
      		height: 480, // default height of the slideshow
 			speed: 'slow', // default animation transition speed
 			interval: 3000, // default interval between image change
+			Active: 'fssActive', // default class for active stat
 			PlayPauseElement: 'fssPlayPause', // default css id for the play / pause element
 			PlayText: 'Play', // default play text
 			PauseText: 'Pause', // default pause text
@@ -67,6 +68,9 @@ jQuery.fn.fadeSlideShow = function(options) {
 		// save this
 		var fssThis = this;
 		var intval = false;
+		// Set active class to current active slide.
+		jQslide.removeClass(settings.Active);
+		jQslide.eq(ActSlide).addClass(settings.Active);
 		var autoplay = function(){
 			intval = setInterval(function(){
 				jQslide.eq(ActSlide).fadeOut(settings.speed);
@@ -85,6 +89,9 @@ jQuery.fn.fadeSlideShow = function(options) {
 				}else{
 					ActSlide = ActSlide - 1;	
 				}
+				// Set active class to current active slide.
+				jQslide.removeClass(settings.Active);
+				jQslide.eq(ActSlide).addClass(settings.Active);
 			}, settings.interval);
 			
 			if(settings.PlayPauseElement){
@@ -111,6 +118,10 @@ jQuery.fn.fadeSlideShow = function(options) {
 			
 			// set the active slide
 			ActSlide = newIndex;
+
+			// Set active class to current active slide.
+			jQslide.removeClass(settings.Active);
+			jQslide.eq(ActSlide).addClass(settings.Active);
 
 			if(settings.ListElement){
 				// set active
