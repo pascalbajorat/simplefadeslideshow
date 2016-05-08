@@ -40,7 +40,9 @@ jQuery.fn.fadeSlideShow = function(options) {
 			ListLiActive: 'fssActive', // default class for active state in the controll list
 			addListToId: false, // add the controll list to special id in your code - default false
 			allowKeyboardCtrl: true, // allow keyboard controlls left / right / space
-			autoplay: true // autoplay the slideshow
+			autoplay: true, // autoplay the slideshow
+			beforeSlide: function(){}, // function to call before going to the next slide
+			afterSlide: function(){} // function to call after going to the next slide
 	 	}, options);
 
 		// set style for wrapper element
@@ -69,6 +71,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 		var intval = false;
 		var autoplay = function(){
 			intval = setInterval(function(){
+				settings.beforeSlide();
 				jQslide.eq(ActSlide).fadeOut(settings.speed);
 
 				// if list is on change the active class
@@ -85,6 +88,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 				}else{
 					ActSlide = ActSlide - 1;
 				}
+				settings.afterSlide();
 			}, settings.interval);
 
 			if(settings.PlayPauseElement){
@@ -103,6 +107,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 		var jumpTo = function(newIndex){
 			if(newIndex < 0){newIndex = Slides;}
 			else if(newIndex > Slides){newIndex = 0;}
+			settings.beforeSlide();
 			if( newIndex >= ActSlide ){
 				jQuery('> *:lt('+(newIndex+1)+')', fssThis).fadeIn(settings.speed);
 			}else if(newIndex <= ActSlide){
@@ -117,6 +122,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 				jQuery('#'+settings.ListElement+' li').removeClass(settings.ListLiActive);
 				jQuery('#'+settings.ListElement+' li').eq((Slides-newIndex)).addClass(settings.ListLiActive);
 			}
+			settings.afterSlide();
 		};
 
 		// if list is on render it
