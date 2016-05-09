@@ -1,7 +1,7 @@
 simplefadeslideshow
 ===================
 
-jQuery Simple Fade SlideShow v.2.1.0
+jQuery Simple Fade SlideShow v.2.2.0
 
 Simple Fade SlideShow is a very simple and easy to use fade-image slideshow. Its structure is very flexible and you can use it for image and / or content transition.
 
