@@ -1,0 +1,21 @@
+{
+  "name": "SimpleFadeSlideShow",
+  "version": "2.2.1",
+  "homepage": "http://www.simplefadeslideshow.com/",
+  "authors": [
+    "Pascal Bajorat <pascal@pascal-bajorat.com>"
+  ],
+  "dependencies": {
+    "jquery": ">=1.5.0"
+  },
+  "description": "SimpleFadeSlideShow is a very simple and easy to use fade-image slideshow. Its structure is very flexible and you can use it for image and / or content transition.",
+  "main": "fadeSlideShow.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
