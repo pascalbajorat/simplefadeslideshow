@@ -2,7 +2,7 @@
  * fadeSlideShow
  * v.2.2.1
  *
- * Copyright (c) 2010 Pascal Bajorat (http://www.pascal-bajorat.com)
+ * Copyright (c) 2016 Pascal Bajorat (http://www.pascal-bajorat.com)
  * Dual licensed under the MIT (below)
  * and GPL (http://www.gnu.org/licenses/gpl.txt) licenses.
  *
