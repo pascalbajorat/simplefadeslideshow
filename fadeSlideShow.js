@@ -82,8 +82,9 @@ jQuery.fn.fadeSlideShow = function(options) {
 				if(settings.ListElement){
 					var setActLi = (Slides - ActSlide) + 1;
 					if(setActLi > Slides){setActLi=0;}
-					jQuery('#'+settings.ListElement+' li').removeClass(settings.ListLiActive);
-					jQuery('#'+settings.ListElement+' li').eq(setActLi).addClass(settings.ListLiActive);
+					const $li = jQuery('#'+settings.ListElement+' li');
+					$li.removeClass(settings.ListLiActive);
+					$li.eq(setActLi).addClass(settings.ListLiActive);
 				}
 
 				if(ActSlide <= 0){
@@ -133,8 +134,9 @@ jQuery.fn.fadeSlideShow = function(options) {
 
 			if(settings.ListElement){
 				// set active
-				jQuery('#'+settings.ListElement+' li').removeClass(settings.ListLiActive);
-				jQuery('#'+settings.ListElement+' li').eq((Slides-newIndex)).addClass(settings.ListLiActive);
+				const $li = jQuery('#'+settings.ListElement+' li');
+				$li.removeClass(settings.ListLiActive);
+				$li.eq((Slides-newIndex)).addClass(settings.ListLiActive);
 			}
 			settings.afterSlide();
 		};
@@ -172,7 +174,8 @@ jQuery.fn.fadeSlideShow = function(options) {
 		}
 
 		if(settings.PlayPauseElement){
-			if(!jQuery('#'+settings.PlayPauseElement).css('display')){
+			const $playPause = jQuery('#'+settings.PlayPauseElement);
+			if(!$playPause.css('display')){
 				jQuery(this).after('<a href="#" id="'+settings.PlayPauseElement+'"><\/a>');
 			}
 
@@ -182,7 +185,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 				jQuery('#'+settings.PlayPauseElement).html(settings.PlayText);
 			}
 
-			jQuery('#'+settings.PlayPauseElement).bind('click', function(){
+			$playPause.bind('click', function(){
 				if(intval){
 					stopAutoplay();
 				}else{
@@ -193,11 +196,12 @@ jQuery.fn.fadeSlideShow = function(options) {
 		}
 
 		if(settings.NextElement){
-			if(!jQuery('#'+settings.NextElement).css('display')){
+			const $next = jQuery('#'+settings.NextElement);
+			if(!$next.css('display')){
 				jQuery(this).after('<a href="#" id="'+settings.NextElement+'">'+settings.NextElementText+'<\/a>');
 			}
 
-			jQuery('#'+settings.NextElement).bind('click', function(){
+			$next.bind('click', function(){
 				nextSlide = ActSlide-1;
 				stopAutoplay();
 				jumpTo(nextSlide);
@@ -206,11 +210,12 @@ jQuery.fn.fadeSlideShow = function(options) {
 		}
 
 		if(settings.PrevElement){
-			if(!jQuery('#'+settings.PrevElement).css('display')){
+			const $prev = jQuery('#'+settings.PrevElement);
+			if(!$prev.css('display')){
 				jQuery(this).after('<a href="#" id="'+settings.PrevElement+'">'+settings.PrevElementText+'<\/a>');
 			}
 
-			jQuery('#'+settings.PrevElement).bind('click', function(){
+			$prev.bind('click', function(){
 				prevSlide = ActSlide+1;
 				stopAutoplay();
 				jumpTo(prevSlide);
@@ -220,18 +225,34 @@ jQuery.fn.fadeSlideShow = function(options) {
 
 		if(settings.allowKeyboardCtrl){
 			jQuery(document).bind('keydown', function(e){
-				if(e.which==39){
-					var nextSlide = ActSlide-1;
+				switch(e.which) {
+				case 39:
+					const nextSlide = ActSlide-1;
 					stopAutoplay();
 					jumpTo(nextSlide);
-				}else if(e.which==37){
-					var prevSlide = ActSlide+1;
+					break;
+				case 37:
+					const prevSlide = ActSlide+1;
 					stopAutoplay();
 					jumpTo(prevSlide);
-				}else if(e.which==32){
+					break;
+				case 32:
 					if(intval){stopAutoplay();}
 					else{autoplay();}
 					//return false;
+					break;
+				}
+			});
+			jQuery(fssThis).bind('keydown', function(e) {
+				switch(e.which) {
+				case 83:  // S
+				case 115: // s
+					if(intval){stopAutoplay();}
+					break;
+				case 80:  // P
+				case 112: // p
+					if(!intval){autoplay();}
+					break;
 				}
 			});
 		}
